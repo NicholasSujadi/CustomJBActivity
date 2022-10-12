@@ -12,7 +12,6 @@
   "arguments": {
     "execute": {
       "url": "https://custom-jb-activity-sp.herokuapp.com/journey/execute",
-
       "verb": "POST",
       "body": "",
       "header": "",
