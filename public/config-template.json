@@ -11,8 +11,8 @@
   },
   "arguments": {
     "execute": {
-      "url": "https://custom-jb-activity-bench-train.herokuapp.com/journey/execute",
-      
+      "url": "https://custom-jb-activity-sp.herokuapp.com/journey/execute",
+
       "verb": "POST",
       "body": "",
       "header": "",
@@ -23,22 +23,22 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://custom-jb-activity-bench-train.herokuapp.com/journey/save",
+      "url": "https://custom-jb-activity-sp.herokuapp.com/journey/save",
       "verb": "POST",
       "useJwt": true
     },
     "publish": {
-      "url": "https://custom-jb-activity-bench-train.herokuapp.com/journey/publish",
+      "url": "https://custom-jb-activity-sp.herokuapp.com/journey/publish",
       "verb": "POST",
       "useJwt": true
     },
     "stop": {
-      "url": "https://custom-jb-activity-bench-train.herokuapp.com/journey/stop",
+      "url": "https://custom-jb-activity-sp.herokuapp.com/journey/stop",
       "verb": "POST",
       "useJwt": true
     },
     "validate": {
-      "url": "https://custom-jb-activity-bench-train.herokuapp.com/journey/validate",
+      "url": "https://custom-jb-activity-sp.herokuapp.com/journey/validate",
       "verb": "POST",
       "useJwt": true
     }
