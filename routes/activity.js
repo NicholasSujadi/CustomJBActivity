@@ -27,9 +27,11 @@ exports.execute = async (req, res) => {
         values: {
           Event: data.inArguments[0].DropdownOptions,
           Text: data.inArguments[0].Text,
+          Number: data.inArguments[0].Number
         },
       },
     ]);
+    logger.debug('Data saved successfully: ', data.inArguments[0].Number);
   } catch (error) {
     logger.error(error);
   }
