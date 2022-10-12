@@ -31,11 +31,12 @@ exports.execute = async (req, res) => {
         },
       },
     ]);
-    logger.debug('Data saved successfully: ', data.inArguments[0].Number);
+    
   } catch (error) {
     logger.error(error);
   }
 
+  logger.debug('Data saved successfully: ', data.inArguments[0].Number);
   res.status(200).send({
     status: 'ok',
   });
@@ -71,6 +72,7 @@ exports.publish = (req, res) => {
  * @param res
  */
 exports.validate = (req, res) => {
+  logger.debug('Journey Validated Successfully');
   res.status(200).send({
     status: 'ok',
   });
