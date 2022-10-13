@@ -1,5 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+const moment = require('moment-timezone')
+
+const timeZones = moment.tz.names();
 
 /**
  * Render Config
@@ -33,6 +36,7 @@ exports.ui = (req, res) => {
         value: 'journeyExit',
       },
     ],
+    timeZoneOptions: timeZones
   });
   
 };
