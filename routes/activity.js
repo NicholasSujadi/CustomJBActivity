@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable linebreak-style */
 const { v1: Uuidv1 } = require('uuid');
 const JWT = require('../utils/jwtDecoder');
 const SFClient = require('../utils/sfmc-client');
@@ -16,7 +18,6 @@ exports.execute = async (req, res) => {
   logger.info(data);
 
   try {
-
     const id = Uuidv1();
 
     await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
@@ -31,9 +32,9 @@ exports.execute = async (req, res) => {
           Number: data.inArguments[0].Number
         },
       },
-    ]);
-
-    logger.debug(SFClient.saveData)
+    ]).then(() => {
+      logger.debug(SFClient.saveData);
+    });
     
   } catch (error) {
     logger.error(error);
