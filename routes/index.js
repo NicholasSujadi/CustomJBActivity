@@ -1,8 +1,10 @@
 const path = require('path');
 const fs = require('fs');
-const moment = require('moment-timezone')
+const moment = require('moment-timezone');
+const logger = require('../utils/logger');
 
 const timeZones = moment.tz.names();
+logger.debug(timeZones);
 
 /**
  * Render Config
