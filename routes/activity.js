@@ -32,10 +32,8 @@ exports.execute = async (req, res) => {
           Number: data.inArguments[0].Number
         },
       },
-    ]).then(() => {
-      logger.debug(SFClient.saveData);
-    });
-    
+    ])
+
   } catch (error) {
     logger.error(error);
   }
@@ -74,7 +72,6 @@ exports.publish = (req, res) => {
  * @param res
  */
 exports.validate = (req, res) => {
-  logger.debug('Journey Validated Successfully');
   res.status(200).send({
     status: 'ok',
   });
