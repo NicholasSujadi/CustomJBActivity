@@ -32,7 +32,7 @@ exports.execute = async (req, res) => {
       },
     ]);
 
-    logger.debug('Data saved successfully: ', data.inArguments[0].Text);
+    logger.debug('Data saved successfully: ', JSON.stringify(data));
     
   } catch (error) {
     logger.error(error);
