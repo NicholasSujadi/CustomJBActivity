@@ -11,16 +11,24 @@ const logger = require('../utils/logger');
  * @param res
  * @returns {Promise<void>}
  */
+
 exports.execute = async (req, res) => {
+  
   // decode data
   const data = JWT(req.body);
 
+ // log data
   logger.info(data);
 
   try {
-    const id = Uuidv1();
+    const id = Uuidv1(); //create a job Id value
 
-    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [
+  //make a POST request through the SFClient to insert data into the data extension
+   //the data extension column names are defined in the data extension itself
+   //the data is passed in through the inArguments parameter
+   //the inArguments parameter is defined in the Journey Builder
+   //https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/postDataExtensionRowsetByKey.html
+    await SFClient.saveData(process.env.DATA_EXTENSION_EXTERNAL_KEY, [ 
       {
         keys: {
           Id: id,
@@ -28,8 +36,8 @@ exports.execute = async (req, res) => {
         },
         values: {
           Event: data.inArguments[0].DropdownOptions,
-          Text: data.inArguments[0].Text,
-          Number: data.inArguments[0].Number
+          StartTime: data.inArguments[0].BlackoutStartTime,
+          EndTime: data.inArguments[0].BlackoutFinishTime
         },
       },
     ])
@@ -37,6 +45,7 @@ exports.execute = async (req, res) => {
   } catch (error) {
     logger.error(error);
   }
+ //send a ok response to SF to clear the contact through the journey
   res.status(200).send({
     status: 'ok',
   });
@@ -59,6 +68,7 @@ exports.save = async (req, res) => {
  * @param req
  * @param res
  */
+
 exports.publish = (req, res) => {
   res.status(200).send({
     status: 'ok',
@@ -71,6 +81,7 @@ exports.publish = (req, res) => {
  * @param req
  * @param res
  */
+
 exports.validate = (req, res) => {
   res.status(200).send({
     status: 'ok',

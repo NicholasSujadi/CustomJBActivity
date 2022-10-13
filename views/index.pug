@@ -23,16 +23,16 @@ block content
                 each dropdownOption in dropdownOptions
                   option(value=dropdownOption.value)= dropdownOption.name
               
-          label.slds-form-element__label.slds-p-top_medium(for='Blackout-Start-Time')
+          label.slds-form-element__label.slds-p-top_medium(for='BlackoutStartTime')
             abbr.slds-required(title='required')
             | Select Blackout Start Time *
           .slds-form-element__control
-            input#Blackout-Start-Time.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
+            input#BlackoutStartTime.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
 
-          label.slds-form-element__label.slds-p-top_medium(for='Blackout-Finish-Time')
+          label.slds-form-element__label.slds-p-top_medium(for='BlackoutFinishTime')
             abbr.slds-required(title='required')
             | Select Blackout Completed Time *
           .slds-form-element__control
-            input#Blackout-Finish-Time.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
+            input#BlackoutFinishTime.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
 
     footer.slds-card__footer
