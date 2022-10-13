@@ -19,9 +19,9 @@ block content
           label.slds-form-element__label(for="DropdownOptions") Type
           .slds-form-element__control
             .slds-select_container
-              select#DropdownOptions.slds-select.js-activity-setting(name='timeZoneOptions')
-                each timeZoneOption in timeZoneOption
-                  option(value=timeZoneOption)= timeZoneOption
+              select#DropdownOptions.slds-select.js-activity-setting(name='dropdownOptions')
+                each dropdownOption in dropdownOptions
+                  option(value=dropdownOption.value)= dropdownOption.name
               
           label.slds-form-element__label.slds-p-top_medium(for='BlackoutStartTime')
             abbr.slds-required(title='required')
