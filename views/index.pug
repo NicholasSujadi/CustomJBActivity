@@ -16,14 +16,8 @@ block content
     .slds-card__body.slds-card__body_inner
       form.js-settings-form
         .slds-form-element
-          label.slds-form-element__label(for="DropdownOptions") Type
-          .slds-form-element__control
-            .slds-select_container
-              select#DropdownOptions.slds-select.js-activity-setting(name='dropdownOptions')
-                each dropdownOption in dropdownOptions
-                  option(value=dropdownOption.value)= dropdownOption.name
-
-          label.slds-form-element__label(for="TimeZoneOptions") Type
+        
+          label.slds-form-element__label(for="TimeZoneOptions") Select Time zone *
           .slds-form-element__control
             .slds-select_container
               select#TimeZoneOptions.slds-select.js-activity-setting(name='timeZoneOptions')
