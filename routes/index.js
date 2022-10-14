@@ -1,5 +1,10 @@
 const path = require('path');
 const fs = require('fs');
+const moment = require('moment-timezone');
+
+
+const timeZones = moment.tz.names();
+
 
 /**
  * Render Config
@@ -22,17 +27,8 @@ exports.config = (req, res) => {
  */
 exports.ui = (req, res) => {
   res.render('index', {
-    title: 'Custom Activity',
-    dropdownOptions: [
-      {
-        name: 'Journey Entry',
-        value: 'journeyEntry',
-      },
-      {
-        name: 'Journey Exit',
-        value: 'journeyExit',
-      },
-    ],
+    title: 'Custom Blackout Period',
+    timeZoneOptions: timeZones
   });
   
 };
