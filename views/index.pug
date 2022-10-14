@@ -16,23 +16,24 @@ block content
     .slds-card__body.slds-card__body_inner
       form.js-settings-form
         .slds-form-element
-          label.slds-form-element__label(for="DropdownOptions") Type
+        
+          label.slds-form-element__label(for="TimeZoneOptions") Select Time zone *
           .slds-form-element__control
             .slds-select_container
-              select#DropdownOptions.slds-select.js-activity-setting(name='dropdownOptions')
-                each dropdownOption in dropdownOptions
-                  option(value=dropdownOption.value)= dropdownOption.name
+              select#TimeZoneOptions.slds-select.js-activity-setting(name='timeZoneOptions')
+                each timeZoneOption in timeZoneOptions
+                  option(value=timeZoneOption)= timeZoneOption
               
-          label.slds-form-element__label.slds-p-top_medium(for='Blackout-Start-Time')
+          label.slds-form-element__label.slds-p-top_medium(for='BlackoutStartTime')
             abbr.slds-required(title='required')
             | Select Blackout Start Time *
           .slds-form-element__control
-            input#Blackout-Start-Time.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
+            input#BlackoutStartTime.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
 
-          label.slds-form-element__label.slds-p-top_medium(for='Blackout-Finish-Time')
+          label.slds-form-element__label.slds-p-top_medium(for='BlackoutFinishTime')
             abbr.slds-required(title='required')
             | Select Blackout Completed Time *
           .slds-form-element__control
-            input#Blackout-Finish-Time.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
+            input#BlackoutFinishTime.slds-input.js-activity-setting(required='', placeholder='', name='text', type="time")
 
     footer.slds-card__footer

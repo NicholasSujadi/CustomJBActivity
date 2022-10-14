@@ -1,5 +1,7 @@
-const FuelRest = require('fuel-rest');
+/* eslint-disable linebreak-style */
+const FuelRest = require('fuel-rest'); // https://github.com/salesforce-marketingcloud/FuelSDK-Node-SSJS
 
+//
 const options = {
   auth: {
     clientId: process.env.SFMC_CLIENT_ID,
@@ -15,7 +17,7 @@ const options = {
   },
 };
 
-const client = new FuelRest(options);
+const client = new FuelRest(options); //Create new REST client
 
 /**
  * Save data in DE
@@ -23,16 +25,20 @@ const client = new FuelRest(options);
  * @param data
  * @returns {?Promise}
  */
-const saveData = async (externalKey, data) => client.post({
+
+//make a POST request to the /dataevents/key:{externalKey}/rowset endpoint
+//to insert row to data extension
+//https://developer.salesforce.com/docs/marketing/marketing-cloud/guide/postDataExtensionRowsetByKey.html
+const saveData = async (externalKey, data) => client.post({ 
   uri: `/hub/v1/dataevents/key:${externalKey}/rowset`,
   headers: {
     'Content-Type': 'application/json',
   },
   json: true,
-  body: data,
+  body: data, //array of objects to insert
 });
 
-module.exports = {
+module.exports = { //exporting the client
   client,
   saveData,
 };
