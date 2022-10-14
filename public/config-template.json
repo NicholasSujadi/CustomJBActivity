@@ -11,7 +11,7 @@
   },
   "arguments": {
     "execute": {
-      "url": "https://$HEROKU_APP_DOMAIN/journey/execute",
+      "url": "https://customjourneyactivity-nics2.herokuapp.com/journey/execute",
 
       "verb": "POST",
       "body": "",
@@ -23,22 +23,22 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://$HEROKU_APP_DOMAIN/journey/save",
+      "url": "https://customjourneyactivity-nics2.herokuapp.com/journey/save",
       "verb": "POST",
       "useJwt": true
     },
     "publish": {
-      "url": "https://$HEROKU_APP_DOMAIN/journey/publish",
+      "url": "https://customjourneyactivity-nics2.herokuapp.com/journey/publish",
       "verb": "POST",
       "useJwt": true
     },
     "stop": {
-      "url": "https://$HEROKU_APP_DOMAIN/journey/stop",
+      "url": "https://customjourneyactivity-nics2.herokuapp.com/journey/stop",
       "verb": "POST",
       "useJwt": true
     },
     "validate": {
-      "url": "https://$HEROKU_APP_DOMAIN/journey/validate",
+      "url": "https://customjourneyactivity-nics2.herokuapp.com/journey/validate",
       "verb": "POST",
       "useJwt": true
     }
